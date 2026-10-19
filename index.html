@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cracks Pollos y Arroces - Cocina artesanal, pollo rostizado a las finas hierbas y los mejores arroces de Bogotá. Realiza tu pedido directo sin comisiones.">
+    <title>Cracks Pollos y Arroces | Sabor Artesanal y Pedidos Directos</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Google Fonts for typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-icon">🍗</span>
+                <span class="logo-text">CRACKS <span>Pollos & Arroces</span></span>
+            </div>
+            <nav class="nav" aria-label="Navegación principal">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Inicio</a></li>
+                    <li><a href="#menu" class="nav-link">Nuestro Menú</a></li>
+                    <li><a href="#tracking" class="nav-link">Rastrear Pedido</a></li>
+                    <li><a href="#loyalty" class="nav-link">Puntos Cracks</a></li>
+                    <li><a href="#contact" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="cart-toggle-btn" class="btn btn-primary cart-btn" aria-label="Ver carrito de compras">
+                    🛒 Carrito <span id="cart-count" class="badge">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="tagline">🔥 Recetas de Chef con Sabor Tradicional</span>
+                <h1>El Auténtico Pollo Rostizado a las Finas Hierbas</h1>
+                <p>Haz tu pedido directo sin comisiones intermedias. Sabor artesanal, entregas rápidas y recompensas exclusivas por cada compra.</p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn btn-primary btn-lg">Ver Menú y Ordenar</a>
+                    <a href="#tracking" class="btn btn-outline btn-lg">Seguir mi Pedido</a>
+                </div>
+            </div>
+            <div class="hero-image-card">
+                <div class="dish-card-hero">
+                    <div class="dish-emoji">🍗🍚</div>
+                    <h3>Combo Cracks Especial</h3>
+                    <p>1/2 Pollo Rostizado + Arroz Artesanal + Papas Criollas + Bebida 1.5L</p>
+                    <span class="hero-price">$28,900 COP</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits / Why Order Direct Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title text-center">¿Por qué pedir directamente en la Web de Cracks?</h2>
+            <div class="grid grid-3">
+                <div class="card benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>Tiempos Garantizados</h3>
+                    <p>Repartidores propios capacitados para que tu comida llegue caliente y en perfecto estado.</p>
+                </div>
+                <div class="card benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Sin Comisiones Extra</h3>
+                    <p>Ahorras hasta un 35% frente a las aplicaciones tradicionales de domicilios.</p>
+                </div>
+                <div class="card benefit-card">
+                    <div class="benefit-icon">⭐</div>
+                    <h3>Puntos y Descuentos</h3>
+                    <p>Acumula puntos en cada compra y canjéalos por platos gratis o bebidas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestro Menú Artesanal</h2>
+                <p>Selecciona tus platillos favoritos y agrégalos al carrito de compra.</p>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">Todos</button>
+                <button class="filter-btn" data-category="pollos">Pollos Rostizados</button>
+                <button class="filter-btn" data-category="arroces">Arroces Especiales</button>
+                <button class="filter-btn" data-category="combos">Combos Familiares</button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="grid grid-3" id="menu-grid">
+                <!-- Items populated via JavaScript for dynamic filtering -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Tracking Section (Functional UI Mockup) -->
+    <section id="tracking" class="tracking-section">
+        <div class="container">
+            <div class="card tracking-card">
+                <h2>Rastrea tu Pedido en Tiempo Real</h2>
+                <p>Ingresa el número de tu pedido para consultar el estado en cocina y reparto.</p>
+                <form id="tracking-form" class="form-inline">
+                    <input type="text" id="order-id-input" placeholder="Ej: CRACKS-1042" required class="form-input">
+                    <button type="submit" class="btn btn-primary">Consultar Estado</button>
+                </form>
+
+                <div id="tracking-result" class="tracking-result hidden">
+                    <div class="order-status-header">
+                        <h3>Estado del Pedido: <span id="status-order-id">CRACKS-1042</span></h3>
+                        <span class="badge badge-success" id="status-badge">En Preparación</span>
+                    </div>
+                    <div class="status-steps">
+                        <div class="step completed">
+                            <span class="step-icon">📝</span>
+                            <span class="step-label">Recibido</span>
+                        </div>
+                        <div class="step active">
+                            <span class="step-icon">🔥</span>
+                            <span class="step-label">En Cocina</span>
+                        </div>
+                        <div class="step">
+                            <span class="step-icon">🛵</span>
+                            <span class="step-label">En Camino</span>
+                        </div>
+                        <div class="step">
+                            <span class="step-icon">🏠</span>
+                            <span class="step-label">Entregado</span>
+                        </div>
+                    </div>
+                    <p class="estimated-time">⏱️ Tiempo estimado de entrega: <strong>25 - 35 minutos</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loyalty Program Section -->
+    <section id="loyalty" class="loyalty-section">
+        <div class="container text-center">
+            <h2>Programa de Fidelización "Puntos Cracks"</h2>
+            <p>Por cada $1.000 pesos en compras ganas 10 Puntos Cracks.</p>
+            <div class="loyalty-box card">
+                <div class="user-points-display">
+                    <span>Tus Puntos Acumulados:</span>
+                    <strong id="user-points">450 Pts</strong>
+                </div>
+                <p>¡Te faltan solo 150 puntos para canjear 1/4 de Pollo Gratis!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Feedback Section -->
+    <section id="contact" class="contact-section">
+        <div class="container grid grid-2">
+            <div class="contact-info">
+                <h2>Cracks Pollos y Arroces</h2>
+                <p><strong>Ubicación:</strong> Zona Norte, Bogotá D.C., Colombia</p>
+                <p><strong>Atención Telefónica / WhatsApp:</strong> +57 (601) 745-8920 / +57 310 456 7890</p>
+                <p><strong>Horarios:</strong> Lunes a Domingo de 11:30 AM a 9:00 PM</p>
+            </div>
+            <div class="card feedback-card">
+                <h3>Encuesta de Satisfacción del Cliente</h3>
+                <form id="feedback-form">
+                    <div class="form-group">
+                        <label for="fb-name">Nombre Completo:</label>
+                        <input type="text" id="fb-name" required class="form-input" placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="fb-rating">Calificación del Servicio:</label>
+                        <select id="fb-rating" class="form-input">
+                            <option value="5">⭐⭐⭐⭐⭐ Excelente</option>
+                            <option value="4">⭐⭐⭐⭐ Muy Bueno</option>
+                            <option value="3">⭐⭐⭐ Aceptable</option>
+                            <option value="2">⭐⭐ Regular</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fb-comments">Comentarios o Sugerencias:</label>
+                        <textarea id="fb-comments" rows="3" class="form-input" placeholder="¿Cómo fue tu experiencia con tu pedido?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Enviar Comentario</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal Drawer -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-overlay"></div>
+        <div class="cart-drawer">
+            <div class="cart-header">
+                <h2>Tu Carrito de Pedido</h2>
+                <button id="cart-close-btn" class="close-btn" aria-label="Cerrar carrito">&times;</button>
+            </div>
+            <div id="cart-items" class="cart-items">
+                <p class="empty-cart-msg">Tu carrito está vacío actualmente.</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total-row">
+                    <span>Total a pagar:</span>
+                    <strong id="cart-total-amount">$0 COP</strong>
+                </div>
+                <form id="checkout-form" class="checkout-form">
+                    <div class="form-group">
+                        <label for="cust-name">Nombre:</label>
+                        <input type="text" id="cust-name" class="form-input-sm" required placeholder="Nombre de quien recibe">
+                    </div>
+                    <div class="form-group">
+                        <label for="cust-address">Dirección de Entrega:</label>
+                        <input type="text" id="cust-address" class="form-input-sm" required placeholder="Calle 127 # 15-42 Apto 301">
+                    </div>
+                    <div class="form-group">
+                        <label for="payment-method">Método de Pago:</label>
+                        <select id="payment-method" class="form-input-sm">
+                            <option value="efectivo">Efectivo contra entrega</option>
+                            <option value="nequi">Nequi / Daviplata</option>
+                            <option value="tarjeta">Datafono en domicilio</option>
+                        </select>
+                    </div>
+                    <button type="submit" id="checkout-btn" class="btn btn-success btn-block" disabled>Confirmar y Enviar Pedido</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Cracks Pollos y Arroces. Todos los derechos reservados. | Desarrollo de Aplicaciones para la Web - UNAD</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
